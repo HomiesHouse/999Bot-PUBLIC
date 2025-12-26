@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧃 999Bot (Developer Documentation)
+# 🧃 999Bot (User Documentation)
 
 **External documentation for the 999Bot.** This document lists all commands that may be useful to the user.
 
