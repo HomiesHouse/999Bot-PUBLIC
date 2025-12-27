@@ -1,61 +1,88 @@
 <div align="center">
 
-# 🧃 999Bot (User Documentation)
+# 🧃 999Bot (Juice WRLD Player)
 
-**External documentation for the 999Bot.** This document lists all commands that may be useful to the user.
+**The ultimate Discord music bot dedicated to the legacy of Juice WRLD.** Stream unreleased tracks, studio hits, and freestyles in high quality, 24/7. Track your listening stats, earn badges, and climb the leaderboard.
 
 [![Invite Bot](https://img.shields.io/badge/Discord-Invite%20Bot-7289DA?style=for-the-badge&logo=discord)](https://discord.com/oauth2/authorize?client_id=1432240754113118332)
 [![Website](https://img.shields.io/badge/Website-Live%20Dashboard-FFD700?style=for-the-badge)](https://lljw.homieshouse.net/)
-[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)]()
+
 </div>
 
-## 🏗️ Architecture Overview
+---
 
-The bot operates on `discord.py` and utilizes a generic Cog system for hot-reloading.
-* **Database:** `sqlite3` (Stores XP, Badges, Guild Configs, User IDs). Deletion avaliable upon request.
-* **Music Source:** Direct URL streaming.
-* **Hosting:** Debian  11 | 64GB RAM | AMD Ryzen 7 5800X (8C\16T)
+## 🚀 Features
+
+* **Massive Library:** Access to hundreds of unreleased songs, leaks, studio albums, and rare freestyles.
+* **24/7 Radio:** Keep the vibe going endlessly in your voice channel (Premium Feature).
+* **XP & Leaderboards:** Earn XP for every song you listen to. Compete for the top spot on your server or globally.
+* **Profile System:** Show off your stats and earn unique badges for your listening history.
+* **Direct Downloads:** Get the `.mp3` of the currently playing song sent directly to your DMs.
+* **Web Dashboard:** View live stats and the global leaderboard on our [website](https://lljw.homieshouse.net/).
+
+---
+
+## 📥 Getting Started
+
+1.  **[Click here to Invite the Bot](https://discord.com/oauth2/authorize?client_id=1432240754113118332)** to your server.
+2.  Join a Voice Channel.
+3.  Type `!play` (or `/play`) to start a random mix, or `!play [song name]` to find a specific track.
+   
+**Note:** Some songs may have multiple versions. It may be useful to use `!search` (or `/search`) in a lot of cases.
 
 ---
 
 ## 🎵 User Commands
 
-Available to all users in any server.
+These commands are available to everyone.
 
 ### 🔊 Music & Playback
-| Command | Alias | Description | Slash Command? |
-| :--- | :--- | :--- | :--- |
+| Command | Alias | Description | Slash? |
+| :--- | :--- | :--- | :---: |
 | `!play [song/search]` | `!p` | Plays a specific song or a random one if empty. | ✅ |
 | `!search [query]` | | Searches the library and returns a selection menu. | ✅ |
 | `!skip` | `!s` | Skips the current track. | ✅ |
 | `!queue` | `!q` | Displays the current queue. | ✅ |
 | `!addqueue [song]` | `!add` | Adds a song directly to the queue without playing immediately. | ✅ |
 | `!qremove [index]` | `!qr` | Removes a specific song from the queue by its number. | ✅ |
-| `!leave` | `!l` | Disconnects the bot. (Returns to camping channel if 24/7 is on). | ✅ |
-
-### 💎 Premium Commands
-| Command | Alias | Description | Slash Command? |
-| :--- | :--- | :--- | :--- |
-| `!file` | | DMs the user the `.mp3` file of the current song. | ❌ |
-| `!247 [on/off]` | | **(Requires Server Admin)** Toggles 24/7 camping mode. | ✅ |
-| `!247 [channel]` | | **(Requires Server Admin)** Sets the dedicated voice channel for the bot. | ✅ |
+| `!leave` | `!l` | Disconnects the bot (Returns to camping channel if 24/7 is on). | ✅ |
+| `!help` | `!h` | Shows the main help menu. | ✅ |
 
 ### 📊 Stats & Profile
-| Command | Alias | Description | Slash Command? |
-| :--- | :--- | :--- | :--- |
+| Command | Alias | Description | Slash? |
+| :--- | :--- | :--- | :---: |
 | `!badges [user]` | | View earned badges. | ❌ |
-| `!leaderboard [users]` | `!lb users` | View the top 10 global users. | ❌ |
-| `!leaderboard [songs]` | `!lb songs` | View the top 10 global songs. | ❌ |
-| `!leaderboard` | `!lb` | Help embed for Leaderboard commands. | ❌ |
-| `!help` | `!h` | Shows a help embed with all the commands. | ✅ |
+| `!leaderboard users` | `!lb` | View the top listeners globally (XP/Songs Finished). | ❌ |
+| `!leaderboard songs` | `!lb` | View the most played songs globally. | ❌ |
+| `!topsongs [user]` | | View the top 5 most played songs for a specific user. | ❌ |
 
 ---
 
-## 👮 Administrator Commands
+## 👑 Premium & Admin Commands
 
-Requires `Administrator` permission or specific role configuration.
+### 👮 Administrator Commands
+Requires `Administrator` permission on the server.
 
-| Command | Alias | Description | Slash Command? |
-| :--- | :--- | :--- | :--- |
-| `!volume [1-100]` | | Sets the playback volume (Default: 50%). | ✅ |
-| `!freestyle [on/off]` | `!fs` | Enables or Disables freestyles from the server's queue. | ✅ |
+| Command | Alias | Description | Slash? |
+| :--- | :--- | :--- | :---: |
+| `!volume [1-100]` | `!vol` | Sets the playback volume (Default: 50%). | ✅ |
+| `!freestyle [on/off]` | | Toggles whether freestyle songs appear in the rotation/search for this server. | ✅ |
+
+### 💎 Premium Features
+Requires the user to be a **Supporter** or the server to be **Premium**.
+
+| Command | Alias | Description | Slash? |
+| :--- | :--- | :--- | :---: |
+| `!247 [on/off]` | | **(Admin)** Toggles 24/7 camping mode. | ✅ |
+| `!247 [channel]` | | **(Admin)** Sets the dedicated voice channel for the bot. | ✅ |
+| `!file [song name]` | | DMs the user a temporary direct download link (`.mp3`) for the song. | ✅ |
+
+---
+
+## 🔗 Links
+
+* **Invite Link:** [Add to Discord](https://discord.com/oauth2/authorize?client_id=1432240754113118332)
+* **Dashboard:** [View Stats](https://lljw.homieshouse.net/)
+* **Support Server:** [Join Homies House](https://discord.gg/HomiesHouse)
+---
+*Made with 🖤 for the 999 Community. 999Forever*
